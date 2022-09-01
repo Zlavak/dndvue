@@ -1,13 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <div class="background">
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'HomeView',
-});
+<script setup lang="ts">
 </script>
+
+<style lang="scss">
+.main {
+  width: 100%;
+  min-height: 100vh;
+  position: sticky;
+  -webkit-background-size: cover;
+  background-size: cover
+}
+</style>
