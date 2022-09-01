@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: Routes.HomePage,
     name: 'home',
-    component: () => import('../views/HomeView.vue')
+    component: () => import('../views/HomeView/HomeView.vue')
   },
   {
     path: Routes.RacePage,

@@ -12,3 +12,11 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.parchment{
+  border-radius: 20px;
+  background: url("@/assets/parchment.jpg") center no-repeat;
+  background-size: cover;
+  padding: 25px;
+  width: fit-content;
+}
