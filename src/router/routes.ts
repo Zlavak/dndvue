@@ -1,6 +1,8 @@
 enum Routes {
  HomePage = '/',
- RacePage = '/race',
+ RacePage = '/Races',
+ ClassPage = '/Classes'
+
 }
 
 export default Routes

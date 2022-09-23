@@ -3,8 +3,7 @@
     <nav class="container">
       <div class="header__links">
         <router-link :to="Routes.RacePage">Расы</router-link>
-        <router-link :to="Routes.RacePage">Расы</router-link>
-        <router-link :to="Routes.RacePage">Расы</router-link>
+        <router-link :to="Routes.ClassPage">Классы</router-link>
       </div>
       <router-link :to="Routes.HomePage">
         <img class="img" src="@/assets/logo.png" alt="">

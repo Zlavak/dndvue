@@ -12,41 +12,16 @@
       первых ознакомлениях с правилами, нахождения компании для совместной игры. С поиском группы людей для игры сайт
       не может вам помочь (но возможно это временно), а с первым ознакомлением и созданием своего персонажа как раз!!
       <br><br>
-      <router-link :to="{ path: '/Classes' }" style="text-decoration: none">
-        <button class="btn" type="button">Создать персонажа</button>
-      </router-link>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-
+<script>
+export default {
+  name: "ClassPage"
+}
 </script>
 
-<style scoped lang="scss">
-.home {
-  background: url("@/assets/home_background.jpg") center no-repeat fixed;
-  width: 100%;
-  min-height: 100vh;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-}
+<style scoped>
 
-.parchment {
-  margin: 0 auto;
-  text-align: justify;
-  font-weight: 400;
-  font-size: 16px;
-  max-width: 80%;
-}
-
-.btn{
-  margin: 0 auto;
-  display: block;
-  background-color: #A62727;
-  padding: 10px 12px;
-  border-radius: 5px;
-  color: white;
-}
 </style>

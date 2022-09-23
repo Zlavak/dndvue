@@ -10,13 +10,24 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: Routes.RacePage,
     name: 'RacePage',
-    component: () => import('../views/AboutView.vue')
-  }
+    component: () => import('../views/RacePage/RacePage.vue')
+  },
+  {
+    path: Routes.ClassPage,
+    name: 'ClassPage',
+    component: () => import('../views/ClassPage/ClassPage.vue')
+  },
+  {
+    path: Routes.ClassPage,
+    name: 'ClassPage',
+    component: () => import('../views/ClassPage/ClassPage.vue')
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
 
 export default router
