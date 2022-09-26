@@ -2,7 +2,7 @@
   <div class="race">
     <div class="align">
       <button class="filter" @click="toggleFilters"></button>
-      <div class="race-filter" v-if="isElementVisible">
+      <div class="race-filter" v-if="isFiltersVisible">
         <button class="campRaces" :class="{ active: !filterEdition.length }" @click="filterEdition = []">Все</button>
         <button class="campRaces" :class="{ active: filterEdition.includes(filter) }" v-for="filter in filters"
                 @click="toggleFilter(filter)">
@@ -17,6 +17,9 @@
       </button>
     </div>
   </div>
+  <teleport to="body">
+    <ModalCards :card="cardToModal" v-if="showModal" @close="showModal = false"/>
+  </teleport>
 </template>
 
 <script setup lang="ts">
@@ -26,10 +29,10 @@ import {cards} from '@/utils/cards';
 import ModalCards from '@/components/ModalCards.vue'
 import ICard from "@/interfaces/ICard";
 
-const isElementVisible = ref(false)
+const isFiltersVisible = ref(false)
 
 const toggleFilters = (): void => {
-  isElementVisible.value = !isElementVisible.value
+  isFiltersVisible.value = !isFiltersVisible.value
 }
 
 const filterEdition = ref([''])
@@ -44,6 +47,27 @@ const toggleFilter = (edition: string): void => {
 }
 
 const filteredCards = computed(() => cards.filter((card) => filterEdition.value.includes(card.edition) || !filterEdition.value.length))
+
+const clearCard: ICard = {
+  edition: '',
+  text: '',
+  info: {
+    specialties: [
+      {
+        title: '',
+        text: '',
+      }
+    ]
+  }
+}
+const cardToModal = ref(clearCard)
+
+const showModal = ref(false)
+
+const selectCard = (card: ICard) => {
+  cardToModal.value = card
+  showModal.value = true
+}
 </script>
 
 <style scoped lang="scss">
