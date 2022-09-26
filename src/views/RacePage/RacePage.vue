@@ -11,7 +11,10 @@
       </div>
     </div>
     <div class="container_cards">
-      <div class="card" :class="card.edition" v-for="card in filteredCards">{{ card.text }}</div>
+      <button class="card" :class="card.edition" @click="selectCard(card)" v-for="card in filteredCards">{{
+          card.text
+        }}
+      </button>
     </div>
   </div>
 </template>
@@ -20,6 +23,8 @@
 import {ref, computed} from "vue";
 import {filters} from '@/utils/filters';
 import {cards} from '@/utils/cards';
+import ModalCards from '@/components/ModalCards.vue'
+import ICard from "@/interfaces/ICard";
 
 const isElementVisible = ref(false)
 
