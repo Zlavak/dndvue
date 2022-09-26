@@ -2,7 +2,7 @@
   <AppModal @close="emit('close')">
     <div class="cardInfo">
       <div class="cardText">
-        <p>{{ props.card.info.specialties[0].text }}</p>
+        <p>{{ card.info.specialties[0].text }}</p>
       </div>
       <div class="cardImg">
         <img src="../assets/elf2.jpg" alt="" class="cardImg__portrait">
@@ -29,7 +29,6 @@ const props = defineProps({
 <style scoped lang="scss">
 
 .cardInfo {
-  width: 80%;
   background: violet url("@/assets/parchment.jpg") center no-repeat fixed;
   background-size: cover;
   border: 4px ridge #a48989;

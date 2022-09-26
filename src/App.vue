@@ -1,6 +1,8 @@
 <template>
   <AppHeader/>
-  <router-view style="margin-top: 80px"/>
+  <main style="margin-top: 82px;">
+    <router-view/>
+  </main>
 </template>
 
 <script setup lang='ts'>
