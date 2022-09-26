@@ -1,11 +1,10 @@
 <template>
   <AppModal @close="emit('close')">
     <div class="cardInfo">
-      <div class="cardText">
-        <p>{{ card.info.specialties[0].text }}</p>
-      </div>
-      <div class="cardImg">
-        <img src="../assets/elf2.jpg" alt="" class="cardImg__portrait">
+      <div class="cardText" v-for="(specialty, index) in card.info.specialties">
+        <img src="../assets/elf2.jpg" alt="" class="cardImg" v-if="index === 0">
+        <p>{{ specialty.title }}</p>
+        <h5>{{ specialty.text }}</h5>
       </div>
     </div>
   </AppModal>
@@ -32,29 +31,19 @@ const props = defineProps({
   background: violet url("@/assets/parchment.jpg") center no-repeat fixed;
   background-size: cover;
   border: 4px ridge #a48989;
-  display: grid;
-  grid-template-columns: 70% 30%;
 }
 
 .cardText {
   margin-left: 5px;
   color: black;
   font-size: 20px;
-  top: 0;
-  left: 0;
   align-self: center;
-  text-align: justify;
 }
 
 .cardImg {
-  display: flex;
-  justify-content: center;
-
-  &__portrait {
-    height: 80%;
-    align-self: center;
-    border-radius: 10px;
-  }
+  float: right;
+  border-radius: 10px;
+  width: 300px;
 }
 
 </style>
