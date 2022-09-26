@@ -25,8 +25,8 @@
 <script setup lang="ts">
 import {ref, computed} from "vue";
 import {filters} from '@/utils/filters';
-import {cards} from '@/utils/cards';
-import ModalCards from '@/components/ModalCards.vue'
+import {cards} from "@/utils/cards";
+import ModalCards from '@/components/ModalCards.vue';
 import ICard from "@/interfaces/ICard";
 
 const isFiltersVisible = ref(false)
